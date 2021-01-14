@@ -3078,12 +3078,12 @@ function calcs.offence(env, actor, activeSkill)
 				output.ChillDurationMod = 1 + (skillModList:Sum("INC", cfg, "EnemyChillDuration") + enemyDB:Sum("INC", nil, "SelfChillDuration")) / 100
 				local enemyThreshold = enemyDB:Sum("BASE", nil, "AilmentThreshold") * enemyDB:More(nil, "Life")
 				local chillEffectMin = skillModList:Override(nil, "ChillMin") or 5
-				effList = { chillEffectMin, 10, 30 }
+				effList = { chillEffectMin, 30 }
 				local desired = skillModList:Sum("BASE", nil, "DesiredBonechillEffect") or 0
 				if output.BonechillEffect then
 					t_insert(effList, output.BonechillEffect)
 				end
-				if not output.BonechillEffect and desired ~= (0 or chillEffectMin or 10 or 30 or output.BonechillEffect) and desired > chillEffectMin and desired < 30 then
+				if not output.BonechillEffect and desired ~= (0 or chillEffectMin or 30 or output.BonechillEffect) and desired > chillEffectMin and desired < 30 then
 					t_insert(effList, desired)
 				end
 				if enemyThreshold > 0 then
