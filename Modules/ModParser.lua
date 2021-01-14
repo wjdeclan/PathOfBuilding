@@ -1557,6 +1557,7 @@ local specialModList = {
 		flag("ColdCanShock"),
 		flag("ChaosCanShock"),
 	},
+	["chills from your hits always reduce action speed by at least (%d+)%%"] = function(num) return { mod("ChillMin", "OVERRIDE", num) } end,
 	-- Gladiator
 	["enemies maimed by you take (%d+)%% increased physical damage"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("PhysicalDamageTaken", "INC", num, { type = "Condition", var = "Maimed" }) }) } end,
 	["chance to block spell damage is equal to chance to block attack damage"] = { flag("SpellBlockChanceIsBlockChance") },
