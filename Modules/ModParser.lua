@@ -2315,6 +2315,7 @@ local specialModList = {
 		mod("EnemyModifier", "LIST", { mod = mod("ColdResist", "INC", num) }),
 	} end,
 	["nearby enemies are chilled"] = { mod("EnemyModifier", "LIST", { mod = mod("Condition:Chilled", "FLAG", true) }) },
+	["nearby enemies are blinded"] = { mod("EnemyModifier", "LIST", { mod = mod("Condition:Blinded", "FLAG", true) }) },
 	["nearby enemies are blinded while physical aegis is not depleted"] = { mod("EnemyModifier", "LIST", { mod = mod("Condition:Blinded", "FLAG", true) }, { type = "Condition", var = "PhysicalAegisDepleted", neg = true }) },
 	["armour is increased by uncapped fire resistance"] = { mod("Armour", "INC", 1, { type = "PerStat", stat = "FireResistTotal", div = 1 }) },
 	["evasion rating is increased by uncapped cold resistance"] = { mod("Evasion", "INC", 1, { type = "PerStat", stat = "ColdResistTotal", div = 1 }) },
